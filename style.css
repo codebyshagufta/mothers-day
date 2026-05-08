@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(to bottom right,#ffd6e7,#ffeef5);
+    overflow-x:hidden;
+    min-height:100vh;
+    color:#ff4f87;
+}
+
+/* HERO */
+
+.hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    text-align:center;
+}
+
+/* TITLE */
+
+.title{
+    font-size:4rem;
+    font-weight:bold;
+    margin-top:20px;
+    animation: glow 2s infinite alternate;
+}
+
+.subtitle{
+    margin-top:10px;
+    font-size:1.3rem;
+    color:#d85b8f;
+}
+
+/* GLOW */
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px #ff8db5;
+    }
+    to{
+        text-shadow:0 0 25px #ff2f75;
+    }
+}
+
+/* PHOTO GALLERY */
+
+.photo-gallery{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.photo-gallery img{
+    width:250px;
+    height:300px;
+    object-fit:cover;
+    border-radius:25px;
+    border:5px solid white;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    transition:0.4s;
+}
+
+.photo-gallery img:hover{
+    transform:scale(1.05) rotate(2deg);
+}
+
+/* CARD */
+
+.card-container{
+    perspective:1000px;
+    margin-top:60px;
+}
+
+.card{
+    width:320px;
+    height:420px;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:1s;
+    cursor:pointer;
+}
+
+.card.open{
+    transform:rotateY(180deg);
+}
+
+.front,
+.inside{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+.front{
+    background:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.front i{
+    font-size:4rem;
+    color:#ff4f87;
+    animation: heartbeat 1.5s infinite;
+}
+
+.front h2{
+    margin-top:20px;
+}
+
+.inside{
+    background:#fff0f5;
+    transform:rotateY(180deg);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.inside h2{
+    margin-bottom:20px;
+}
+
+.inside p{
+    margin-bottom:15px;
+    line-height:1.6;
+    color:#d04d7f;
+}
+
+/* HEARTBEAT */
+
+@keyframes heartbeat{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.2);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* FLOATING HEARTS */
+
+.hearts::before,
+.hearts::after{
+    content:"💖 💕 💗 💞 💓";
+    position:fixed;
+    width:100%;
+    font-size:2rem;
+    animation: float 15s linear infinite;
+    opacity:0.4;
+}
+
+.hearts::after{
+    top:50%;
+    animation-duration:20s;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-120vh);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .title{
+        font-size:2.5rem;
+    }
+
+    .photo-gallery img{
+        width:200px;
+        height:250px;
+    }
+
+    .card{
+        width:280px;
+        height:400px;
+    }
+}
