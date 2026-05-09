@@ -19,6 +19,8 @@
     <!-- Main Section -->
     <section class="hero">
 
+        <img src="assets/images/hero1.jpg" alt="Mother's Day Image">
+        
         <h1 class="title">
             Happy Mother's Day 💕
         </h1>
@@ -26,45 +28,94 @@
         <p class="subtitle">
             To the most beautiful soul in my life ✨
         </p>
-
+    </section>
         <!-- Photos -->
         <div class="photo-gallery">
-            <img src="mom1.jpg" alt="">
-            <img src="mom2.jpg" alt="">
-            <img src="mom3.jpg" alt="">
+            <img src="assets/images/img1.jpeg" alt="">
+            <img src="assets/images/img2.jpeg" alt="">
+            <img src="assets/images/img3.jpeg" alt="">
         </div>
 
-        <!-- Open Card -->
-        <div class="card-container">
-            <div class="card" id="card">
+        <section class="mom-about">
+          <h2 class="calligraphy">My Mother, My Universe</h2>
 
-                <div class="front">
-                    <i class="fa-solid fa-heart"></i>
-                    <h2>Tap To Open 💌</h2>
-                </div>
+            <p>My mom is the most beautiful part of my life. Her journey is filled with endless love, silent sacrifices, and unwavering strength that shaped who I am today. From the very beginning, she has been my support system, my safe place, and my biggest inspiration. No matter how difficult life became, she always stood strong with a smile on her face, putting our happiness above everything else. Her efforts often go unnoticed, but they are the reason behind every small success I achieve. I may never be able to repay everything she has done for me, but I will always carry her love in my heart and try to make her proud every single day. ❤️
+            </p>
+        </section>
 
-                <div class="inside">
-                    <h2>Dear Mom 💖</h2>
+        
+    
 
-                    <p>
-                        Thank you for your endless love,
-                        your warm hugs, your sacrifices,
-                        and for always believing in me.
-                        You are my safe place,
-                        my strongest support,
-                        and my biggest blessing.
-                    </p>
+    
 
-                    <p>
-                        I love you more than words can ever express 🌸
-                    </p>
-                </div>
 
+    <!-- 💖 WHY I LOVE YOU MOM SECTION -->
+    <section class="why-section">
+
+        <h2 class="why-title">Why I Love You Mom 💖</h2>
+
+        <div class="why-container">
+
+            <div class="why-card" onclick="toggleCard(this)">
+                <h3>🌸 Your Love</h3>
+                <p class="why-text">You love me unconditionally, no matter what happens in life.</p>
             </div>
+
+            <div class="why-card" onclick="toggleCard(this)">
+                <h3>💪 Your Strength</h3>
+                <p class="why-text">You stay strong even when everything feels hard.</p>
+            </div>
+
+            <div class="why-card" onclick="toggleCard(this)">
+                <h3>🌷 Your Care</h3>
+                <p class="why-text">Every small thing you do shows how much you care for me.</p>
+            </div>
+
+            <div class="why-card" onclick="toggleCard(this)">
+                <h3>💖 My Safe Place</h3>
+                <p class="why-text">You are the only place where I feel truly safe and loved.</p>
+            </div>
+
         </div>
 
     </section>
 
+    
+    <div class="card-container">
+         <div class="card" onclick="toggleCard(this)">
+
+           <div class="front">
+                <i class="fa-solid fa-gift"></i>
+                <h2>🎁 Tap To Open</h2>
+            </div>
+
+            <div class="inside">
+                <img src="assets/images/gift.jpg" alt="" srcset="">
+                <h2>💖 Surprise Gift</h2>
+                <p>This is your special moment mom ❤️</p>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <h2>💖 Thank You, Mom</h2>
+        <p>
+            No words will ever be enough to express what you mean to me.  
+            Thank you for your endless love, sacrifices, and strength.  
+            You are my heart, my home, and my forever inspiration.  
+            I love you today, tomorrow, and always. ❤️
+        </p>
+
+        <div class="signature">
+            Made with ❤️ for the best mom in the world
+        </div>
+    </footer>
+
+
+
     <script src="script.js"></script>
+
 </body>
 </html>

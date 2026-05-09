@@ -5,11 +5,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
-    background: linear-gradient(to bottom right,#ffd6e7,#ffeef5);
-    overflow-x:hidden;
-    min-height:100vh;
-    color:#ff4f87;
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(#fff0f5, #ffe6ee);
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 /* HERO */
@@ -19,9 +20,24 @@ body{
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    padding:40px 20px;
     text-align:center;
 }
+
+.hero-image{
+    position:relative;
+    height:100vh;
+    width:100%;
+    overflow:hidden;
+    display: block;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:brightness(70%);
+}
+
 
 /* TITLE */
 
@@ -73,72 +89,38 @@ body{
     transform:scale(1.05) rotate(2deg);
 }
 
-/* CARD */
 
-.card-container{
-    perspective:1000px;
-    margin-top:60px;
+.mom-about {
+  padding: 70px 25px;
+  background: linear-gradient(#fff0f5, #ffe6ee);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.card{
-    width:320px;
-    height:420px;
-    position:relative;
-    transform-style:preserve-3d;
-    transition:1s;
-    cursor:pointer;
+/*ABout mom*/
+/* Calligraphy heading */
+.calligraphy {
+  font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+  font-size: 42px;
+  color: #ff4d79;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
 }
 
-.card.open{
-    transform:rotateY(180deg);
+/* Paragraph styling */
+.mom-about p {
+  max-width: 850px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.9;
+  color: #444;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-.front,
-.inside{
-    position:absolute;
-    width:100%;
-    height:100%;
-    backface-visibility:hidden;
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
 
-.front{
-    background:white;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.front i{
-    font-size:4rem;
-    color:#ff4f87;
-    animation: heartbeat 1.5s infinite;
-}
-
-.front h2{
-    margin-top:20px;
-}
-
-.inside{
-    background:#fff0f5;
-    transform:rotateY(180deg);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
-
-.inside h2{
-    margin-bottom:20px;
-}
-
-.inside p{
-    margin-bottom:15px;
-    line-height:1.6;
-    color:#d04d7f;
-}
 
 /* HEARTBEAT */
 
@@ -197,4 +179,194 @@ body{
         width:280px;
         height:400px;
     }
+}
+
+
+
+.gallery-section{
+    padding:80px 20px;
+    text-align:center;
+    background: linear-gradient(#fff0f5, #ffe6ee);
+}
+
+.gallery-title{
+    font-size:2.5rem;
+    margin-bottom:40px;
+    color:#ff4f87;
+}
+
+
+
+
+
+
+/*Why love you mom*/
+
+.why-section{
+    padding:80px 20px;
+    text-align:center;
+    background: linear-gradient(#fff0f5, #ffe6ee);
+}
+
+.why-title{
+    font-size:2.5rem;
+    color:#ff4f87;
+    margin-bottom:40px;
+    animation: fadeIn 2s ease;
+}
+
+.why-container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* 🌸 Card style */
+.why-card{
+    width:250px;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+/* hover effect */
+.why-card:hover{
+    transform:translateY(-10px) scale(1.05);
+    box-shadow:0 15px 35px rgba(255,105,180,0.3);
+}
+
+/* hidden text initially */
+.why-text{
+    margin-top:10px;
+    opacity:0;
+    max-height:0;
+    overflow:hidden;
+    transition:0.4s ease;
+    color:#d94b7d;
+}
+
+/* active state */
+.why-card.active .why-text{
+    opacity:1;
+    max-height:200px;
+}
+
+/* fade title */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+
+
+/* ================= GIFT CARD CONTAINER ================= */
+.card-container {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+}
+
+/* ================= CARD BASE ================= */
+.card {
+    width: 340px;
+    height: 420px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.9s ease, transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+/* hover effect (premium feel) */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(255, 105, 180, 0.3);
+}
+
+/* ================= FRONT & INSIDE ================= */
+.front,
+.inside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    text-align: center;
+}
+
+/* ================= FRONT SIDE (GIFT COVER) ================= */
+.front {
+    background: linear-gradient(135deg, #ffb6c1, #fff0f5);
+    color: #ff4f87;
+    font-size: 1.2rem;
+}
+
+/* ================= INSIDE SIDE ================= */
+.inside {
+    transform: rotateY(180deg);
+    background: #ffffff;
+    color: #444;
+}
+
+/* inside text styling */
+.inside h2 {
+    color: #ff4f87;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.inside p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ================= FLIP EFFECT ================= */
+.card.active {
+    transform: rotateY(180deg);
+}
+
+
+
+.footer {
+  background: linear-gradient(135deg, #ffb6c1, #fff0f5);
+  text-align: center;
+  padding: 50px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.footer h2 {
+  font-size: 30px;
+  color: #ff4d79;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.signature {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
 }
