@@ -263,7 +263,133 @@ body {
     to{opacity:1; transform:translateY(0);}
 }
 
+/* ================= GIFT CARD ================= */
 
+.card-container{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+/* CARD */
+
+.card{
+    width: 340px;
+    height: 420px;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+    transition: transform 0.9s ease;
+
+    cursor: pointer;
+}
+
+/* FLIP EFFECT */
+
+.card.active{
+    transform: rotateY(180deg);
+}
+
+/* FRONT + INSIDE */
+
+.front,
+.inside{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+
+    overflow: hidden;
+}
+
+/* FRONT SIDE */
+
+.front{
+    background: linear-gradient(135deg,#ff9eb5,#ffc1cc);
+    color: white;
+}
+
+.front i{
+    font-size: 70px;
+    margin-bottom: 20px;
+
+    animation: bounce 2s infinite;
+}
+
+.front h2{
+    font-size: 2rem;
+}
+
+/* INSIDE */
+
+.inside{
+    background: white;
+
+    transform: rotateY(180deg);
+
+    padding: 20px;
+    text-align: center;
+}
+
+.inside img{
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    margin-bottom: 15px;
+}
+
+.inside h2{
+    color: #ff4f87;
+    margin-bottom: 10px;
+}
+
+.inside p{
+    color: #555;
+    font-size: 1rem;
+}
+
+/* ICON ANIMATION */
+
+@keyframes bounce{
+    0%,100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(-10px);
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .card{
+        width: 280px;
+        height: 380px;
+    }
+}
 
 
 
